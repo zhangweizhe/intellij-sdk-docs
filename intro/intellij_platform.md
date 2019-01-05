@@ -1,14 +1,23 @@
 ---
 title: What is the IntelliJ Platform?
 ---
+IntelliJ Platform本身并不是一款产品，但它为构建其他IDE提供了一个平台。它为JetBrains的其他产品提供了驱动力，比如[IntelliJ IDEA](https://www.jetbrains.com/idea/), [WebStorm](https://www.jetbrains.com/webstorm/), [RubyMine](https://www.jetbrains.com/ruby/), [DataGrip](https://www.jetbrains.com/datagrip/) 和 [Rider](https://www.jetbrains.com/rider/)。IntelliJ Platform也是开源的，其他厂商也可以用它构建IDE，比如由Google开发的[Android Studio](https://developer.android.com/studio/index.html)。
 
 The _IntelliJ Platform_ is not a product in and of itself, but provides a platform for building IDEs. It is used to power JetBrains products such as [IntelliJ IDEA](https://www.jetbrains.com/idea/), [WebStorm](https://www.jetbrains.com/webstorm/), [RubyMine](https://www.jetbrains.com/ruby/), [DataGrip](https://www.jetbrains.com/datagrip/) and [Rider](https://www.jetbrains.com/rider/). It is also Open Source, and can be used by third parties to build IDEs, such as [Android Studio](https://developer.android.com/studio/index.html) from Google.
 
+IntelliJ Platform提供了所有的基础设施，这些基础设施是其他IDE提供丰富的语言支持工具所需要的。它提供了一个由组件驱动的、基于JVM的跨平台应用，这个应用提供了一个工具包，用于创建工具窗口、树形图、列表、弹出菜单和弹窗等。
+
 The _IntelliJ Platform_ provides all of the infrastructure that these IDEs need to provide rich language tooling support. It provides a component driven, cross platform JVM based application host with a high level user interface toolkit for creating tool windows, tree views and lists (supporting fast search) as well as popup menus and dialogs.
+
+它同时包含了一个图片编辑器以及一个完整的文字编辑器，并提供语法高亮、代码折叠、代码补全以及富文本编辑等功能的抽象实现。
 
 It also includes an image editor as well as a full text editor, and provides abstract implementations of syntax highlighting, code folding, code completion, and other rich text editing features.
 
+此外，IntelliJ Platform还包含了可插拔式的API用于构建通用的IDE功能，比如一个项目模型和一个构建系统。它还为非常丰富的调式体验提供了基础架构，具有语言无关的高级断点支持，调用堆栈，监视窗口和表达式评估。
+
 Furthermore, it includes pluggable APIs to build common IDE functionality, such as a project model and a build system. It also provides infrastructure for a very rich debugging experience, with language agnostic advanced breakpoint support, call stacks, watch windows and expression evaluation.
+
+但IntelliJ Platform真正强大的地方，来自Program Structure Interface(PSI)。这是一个功能集合，可用于解析文件、构建丰富的代码语法和语义模型、从这些数据中家里索引。这些为很多功能提供了动力，从快速定位到文件、类型和符号，到代码补全窗口的内容和查找使用的地方
 
 But the _IntelliJ Platform_'s real power comes from the Program Structure Interface (PSI). This is a set of functionality that can be used to parse files and build rich syntactic and semantic models of the code, and to build indexes from this data. This powers a lot of functionality, from quick navigating to files, types and symbols, to the contents of code completion windows and find usages, code inspections and code rewriting, for quick fixes or refactorings, as well as many other features.
 
