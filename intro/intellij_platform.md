@@ -3,21 +3,39 @@ title: What is the IntelliJ Platform?
 ---
 IntelliJ Platform本身并不是一款产品，但它为构建其他IDE提供了一个平台。它为JetBrains的其他产品提供了驱动力，比如[IntelliJ IDEA](https://www.jetbrains.com/idea/), [WebStorm](https://www.jetbrains.com/webstorm/), [RubyMine](https://www.jetbrains.com/ruby/), [DataGrip](https://www.jetbrains.com/datagrip/) 和 [Rider](https://www.jetbrains.com/rider/)。IntelliJ Platform也是开源的，其他厂商也可以用它构建IDE，比如由Google开发的[Android Studio](https://developer.android.com/studio/index.html)。
 
-The _IntelliJ Platform_ is not a product in and of itself, but provides a platform for building IDEs. It is used to power JetBrains products such as [IntelliJ IDEA](https://www.jetbrains.com/idea/), [WebStorm](https://www.jetbrains.com/webstorm/), [RubyMine](https://www.jetbrains.com/ruby/), [DataGrip](https://www.jetbrains.com/datagrip/) and [Rider](https://www.jetbrains.com/rider/). It is also Open Source, and can be used by third parties to build IDEs, such as [Android Studio](https://developer.android.com/studio/index.html) from Google.
-
 IntelliJ Platform提供了所有的基础设施，这些基础设施是其他IDE提供丰富的语言支持工具所需要的。它提供了一个由组件驱动的、基于JVM的跨平台应用，这个应用提供了一个工具包，用于创建工具窗口、树形图、列表、弹出菜单和弹窗等。
-
-The _IntelliJ Platform_ provides all of the infrastructure that these IDEs need to provide rich language tooling support. It provides a component driven, cross platform JVM based application host with a high level user interface toolkit for creating tool windows, tree views and lists (supporting fast search) as well as popup menus and dialogs.
 
 它同时包含了一个图片编辑器以及一个完整的文字编辑器，并提供语法高亮、代码折叠、代码补全以及富文本编辑等功能的抽象实现。
 
-It also includes an image editor as well as a full text editor, and provides abstract implementations of syntax highlighting, code folding, code completion, and other rich text editing features.
-
 此外，IntelliJ Platform还包含了可插拔式的API用于构建通用的IDE功能，比如一个项目模型和一个构建系统。它还为非常丰富的调式体验提供了基础架构，具有语言无关的高级断点支持，调用堆栈，监视窗口和表达式评估。
 
-Furthermore, it includes pluggable APIs to build common IDE functionality, such as a project model and a build system. It also provides infrastructure for a very rich debugging experience, with language agnostic advanced breakpoint support, call stacks, watch windows and expression evaluation.
+但IntelliJ Platform真正强大的地方，来自Program Structure Interface(PSI)。这是一个功能集合，可用于解析文件、构建丰富的代码语法和语义模型、从这些数据中家里索引。这些为很多功能提供了动力，从快速定位到文件、类型和符号，到代码补全窗口的内容和查找用法，代码检查和代码重写，快速修复或重构，以及许多其他功能。
 
-但IntelliJ Platform真正强大的地方，来自Program Structure Interface(PSI)。这是一个功能集合，可用于解析文件、构建丰富的代码语法和语义模型、从这些数据中家里索引。这些为很多功能提供了动力，从快速定位到文件、类型和符号，到代码补全窗口的内容和查找使用的地方
+IntelliJ Platform包含了用于解析一系列语言的解析器和PSI模型，它的可组合性意味着可以添加对其他语言的支持。
+
+## 插件
+
+得益于IntelliJ Platform对组件的创建，以及将依赖注入到类中，在IntelliJ Platform上构建的产品都会是组合性的应用程序。IntelliJ Platform完全支持插件，并且JetBrains维护了一个[插件仓库](https://plugins.jetbrains.com)，可以在这个仓库上发布支持一种或者多种产品的插件。你也可以维护自己的插件仓库，并单独地发布插件。
+
+插件可以在多个方面扩展IntelliJ Platform，从添加一个简单的菜单项，到添加对一种语言的支持，构建系统和调试器。IntelliJ Platform上许多功能是作为插件存在的，可以根据产品的需求添加或者删除这些功能。查阅[插件](/basics.md)这一节内容，获取更多相关的详情。
+
+IntelliJ Platform是一款使用Java和Kotlin编写，基于JVM的应用程序。为了为基于IntelliJ Platform的产品编写插件，你应该熟悉这些语言以及相关的工具。目前，还无法使用非JVM语音来扩展IntelliJ Platform。
+
+## 开源
+
+IntelliJ Platform是开源的，在[Apache license](https://github.com/JetBrains/intellij-community/blob/master/LICENSE.txt)下获得许可, 并在[GitHub](https://github.com/JetBrains/intellij-community)上维护。
+
+虽然本指引是将IntelliJ Platform当成了一个单独的整体，但在GitHub上是没有“IntelliJ Platform”这样一个仓库的。取而代之的，是IntelliJ IDEA Edition，一款几乎与IntelliJ Platform相同的产品，作为IntelliJ IDEA Ultimate的免费和开源版本，它在GitHub上的地址是[JetBrains/intellij-community](https://github.com/JetBrains/intellij-community)。
+
+
+
+The _IntelliJ Platform_ is not a product in and of itself, but provides a platform for building IDEs. It is used to power JetBrains products such as [IntelliJ IDEA](https://www.jetbrains.com/idea/), [WebStorm](https://www.jetbrains.com/webstorm/), [RubyMine](https://www.jetbrains.com/ruby/), [DataGrip](https://www.jetbrains.com/datagrip/) and [Rider](https://www.jetbrains.com/rider/). It is also Open Source, and can be used by third parties to build IDEs, such as [Android Studio](https://developer.android.com/studio/index.html) from Google.
+
+The _IntelliJ Platform_ provides all of the infrastructure that these IDEs need to provide rich language tooling support. It provides a component driven, cross platform JVM based application host with a high level user interface toolkit for creating tool windows, tree views and lists (supporting fast search) as well as popup menus and dialogs.
+
+It also includes an image editor as well as a full text editor, and provides abstract implementations of syntax highlighting, code folding, code completion, and other rich text editing features.
+
+Furthermore, it includes pluggable APIs to build common IDE functionality, such as a project model and a build system. It also provides infrastructure for a very rich debugging experience, with language agnostic advanced breakpoint support, call stacks, watch windows and expression evaluation.
 
 But the _IntelliJ Platform_'s real power comes from the Program Structure Interface (PSI). This is a set of functionality that can be used to parse files and build rich syntactic and semantic models of the code, and to build indexes from this data. This powers a lot of functionality, from quick navigating to files, types and symbols, to the contents of code completion windows and find usages, code inspections and code rewriting, for quick fixes or refactorings, as well as many other features.
 
