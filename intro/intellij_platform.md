@@ -25,7 +25,11 @@ IntelliJ Platform是一款使用Java和Kotlin编写，基于JVM的应用程序�
 
 IntelliJ Platform是开源的，在[Apache license](https://github.com/JetBrains/intellij-community/blob/master/LICENSE.txt)下获得许可, 并在[GitHub](https://github.com/JetBrains/intellij-community)上维护。
 
-虽然本指引是将IntelliJ Platform当成了一个单独的整体，但在GitHub上是没有“IntelliJ Platform”这样一个仓库的。取而代之的，是IntelliJ IDEA Edition，一款几乎与IntelliJ Platform相同的产品，作为IntelliJ IDEA Ultimate的免费和开源版本，它在GitHub上的地址是[JetBrains/intellij-community](https://github.com/JetBrains/intellij-community)。
+虽然本指引是将IntelliJ Platform当成了一个单独的整体，但在GitHub上是没有“IntelliJ Platform”这样一个仓库的。取而代之的，是IntelliJ IDEA Edition，一款几乎与IntelliJ Platform相同的产品，作为IntelliJ IDEA 终极版的免费和开源版本，它在GitHub上的地址是[JetBrains/intellij-community](https://github.com/JetBrains/intellij-community)。
+
+IntelliJ IDEA 终极版是IntelliJ IDEA 社区版的扩展版本。它是基于社区版本的，但包含了一些非开源的插件（[查看功能比较](https://www.jetbrains.com/idea/features/editions_comparison_matrix.html)）。相似的，其他产品，比如WebStorm和DataGrip也是基于IntelliJ IDEA 社区版的，但包含了不同的插件集合，并删除了其他默认的插件。
+
+因为每个产品都会包含IntelliJ IDEA 社区版基本的功能和插件，所以允许插件同时适配多个产品。这就是我们称之为IntelliJ Platform的原因。
 
 
 
